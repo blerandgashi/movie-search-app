@@ -65,5 +65,55 @@ header h1{
   gap: 30px;
 }
 .movie-poster{
-  
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px gray;
+}
+.movie-poster img{
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+.movie-title {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.movie-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.movie-rating {
+    background: #ffd700;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.movie-plot {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.movie-meta {
+    color: #777;
+    font-size: 14px;
+}
+
+.movie-meta p {
+    margin-bottom: 5px;
+}
+.error{
+  display: none;
+  text-align: center;
+}
+.error.active{
+  display: block;
+  color: red;
 }
