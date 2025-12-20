@@ -50,10 +50,11 @@ header h1{
   transform: translateY(-2px);
 }
 .movie-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 .movie-card{
   background-color: white;
@@ -62,17 +63,29 @@ header h1{
   max-width: 800px;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+.movie-card-container{
+  display: flex;
+  justify-content: center;
   gap: 30px;
 }
 .movie-poster{
   width: 250px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px gray;
+  height: 370px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px black;
 }
 .movie-poster img{
   width: 100%;
-  height: auto;
+  height: 370px;
   border-radius: 15px;
+  margin: auto;
+}
+.movie-details{
+  width: 50%;
 }
 .movie-title {
     font-size: 32px;
@@ -100,7 +113,23 @@ header h1{
     line-height: 1.6;
     margin-bottom: 15px;
 }
-
+.watchlist-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+#add-btn{
+  border-radius: 50%;
+  padding: 5px 10px;
+  border: 0;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.watchlist-btn span{
+  text-decoration: underline;
+}
 .movie-meta {
     color: #777;
     font-size: 14px;
@@ -109,11 +138,11 @@ header h1{
 .movie-meta p {
     margin-bottom: 5px;
 }
-.error{
+#error{
   display: none;
   text-align: center;
 }
-.error.active{
+#error.active{
   display: block;
   color: red;
 }
