@@ -133,7 +133,7 @@ a{
   align-items: center;
   gap: 7px;
 }
-#add-btn{
+.add-btn{
   border-radius: 50%;
   padding: 5px 10px;
   border: 0;
@@ -167,7 +167,7 @@ a{
   color: white;
 }
 .empty-message{
-
+  display: none;
 }
 .empty-message.active{
   display: block;
