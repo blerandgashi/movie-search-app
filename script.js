@@ -15,7 +15,6 @@ async function getMovie() {
     data.results.forEach(index => {
 
       const posterUrl = `https://image.tmdb.org/t/p/w500${index.poster_path}}`;
-      console.log(index.id);
       
       if (index.poster_path != null) {
         movieContainer.innerHTML += `
@@ -41,7 +40,7 @@ async function getMovie() {
               </div>
             </div>
             <div class="watchlist-btn">
-              <button id="add-btn" 
+              <button class="add-btn" 
                 data-id="${index.id}"
                 data-title="${index.title}"
                 data-poster="${posterUrl}"
@@ -57,6 +56,31 @@ async function getMovie() {
       }
     })
 }
+
+movieContainer.addEventListener("click", function(e){
+  if (e.target.classList.contains("add-btn")) {
+    const movieData = {
+      id: e.target.dataset.id,
+      title: e.target.dataset.title,
+      poster: e.target.dataset.poster,
+      year: e.target.dataset.year,
+      rating: e.target.dataset.rating,
+      overview: e.target.dataset.overview
+    }
+
+    let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+
+    const exists = watchlist.find(movie => movie.id === movieData.id);
+    
+    if (!exists) {
+      watchlist.push(movieData);
+      localStorage.setItem("watchlist", JSON.stringify(watchlist));
+      alert("Movie is added in watchlist!")
+    }else{
+      alert("The movie exists in watchlist!")
+    }
+  }
+})
 
 searchBtn.addEventListener("click", function(){
   if (movieInputEl.value != "") {
