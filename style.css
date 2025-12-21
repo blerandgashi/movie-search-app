@@ -63,12 +63,12 @@ a{
   background-color: rgb(3, 215, 3);
   transform: translateY(-2px);
 }
-.movie-container{
+.movie-container,.watchlist-container{
   min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 .movie-card{
   background-color: white;
@@ -133,7 +133,7 @@ a{
   align-items: center;
   gap: 7px;
 }
-.add-btn{
+.add-btn,.remove-btn{
   border-radius: 50%;
   padding: 5px 10px;
   border: 0;
@@ -141,7 +141,8 @@ a{
   color: white;
   cursor: pointer;
 }
-.watchlist-btn span{
+.watchlist-btn span,
+.remove span{
   text-decoration: underline;
 }
 .movie-meta {
@@ -171,4 +172,10 @@ a{
 }
 .empty-message.active{
   display: block;
+}
+.remove{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
