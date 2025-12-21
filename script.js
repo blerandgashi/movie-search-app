@@ -13,6 +13,7 @@ async function getMovie() {
 
     console.log(data);
     data.results.forEach(index => {
+
       const posterUrl = `https://image.tmdb.org/t/p/w500${index.poster_path}}`;
       console.log(index.id);
       
@@ -40,7 +41,15 @@ async function getMovie() {
               </div>
             </div>
             <div class="watchlist-btn">
-              <button id="add-btn" data-id="${index.id}">+</button>
+              <button id="add-btn" 
+                data-id="${index.id}"
+                data-title="${index.title}"
+                data-poster="${posterUrl}"
+                data-year="${index.release_date}"
+                data-rating="${index.vote_average.toFixed(2)}"
+                data-overview="${index.overview}">
+                +
+              </button>
               <span>Watchlist</span>
             </div>
           </div>
@@ -53,6 +62,7 @@ searchBtn.addEventListener("click", function(){
   if (movieInputEl.value != "") {
     getMovie();
     errorMessage.classList.remove("active");
+    movieInputEl.value = "";
   }else{
     errorMessage.classList.add("active")
   }
